@@ -112,7 +112,6 @@ resource "aws_eip" "bar" {
   vpc = true
 
   depends_on = [aws_internet_gateway.gw]
-  instance  = "${aws_instance.App-2.id}"
 }
 resource "aws_nat_gateway" "ngw" {
   allocation_id = "${aws_eip.bar.id}"
