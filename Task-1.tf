@@ -110,7 +110,7 @@ tags ={
 }
 resource "aws_eip" "bar" {
   vpc = true
-  instance = aws_instance.App2.id
+  instance = aws_instance.App-2.id
 }
 resource "aws_nat_gateway" "ngw" {
   allocation_id = "${aws_eip.bar.id}"
