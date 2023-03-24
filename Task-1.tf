@@ -112,8 +112,11 @@ resource "aws_eip" "bar" {
   vpc = true
   instance = aws_instance.App-2.id
 }
+resource "aws_eip" "bar1" {
+  vpc = true
+}
 resource "aws_nat_gateway" "ngw" {
-  allocation_id = "${aws_eip.bar.id}"
+  allocation_id = "${aws_eip.bar1.id}"
   subnet_id     = "${aws_subnet.public.id}"
   depends_on = [aws_internet_gateway.gw]
 
