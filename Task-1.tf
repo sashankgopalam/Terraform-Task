@@ -90,7 +90,7 @@ ingress {
 resource "aws_instance" "App-1" {
   ami = "ami-00c39f71452c08778"
   instance_type = "t2.micro"
-  key_name = "prog-acc.pem"
+  key_name = "prog-acc"
   vpc_security_group_ids = [ "${aws_security_group.sg1.id}" ]
   subnet_id = aws_subnet.public.id
 tags ={
